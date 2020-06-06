@@ -1,0 +1,215 @@
+{% extends "layout.html" %}
+{% block body %}
+        <!-- Intro Section -->
+        <div id="home" class="view jarallax" data-jarallax='{"speed": 0.2}' style="background-image: url('{{ url_for('static', filename='img/pic5.jpg') }}'); background-repeat: no-repeat; background-size: cover; background-position: center top ;">
+            <div class="mask rgba-white-strong">
+                <div class="container h-100 d-flex justify-content-center align-items-center">
+                    <div class="row smooth-scroll">
+                        <div class="col-md-12 pt-3">
+                            <div class="white-text text-center pt-5">
+                                <h4 class="display-2 mb-4 dark-grey-text wow fadeIn">{{params['title']}}</h4>
+                                <h5 class="text-uppercase font-weight-bold wow fadeIn" data-wow-delay="0.4s"><p style="color: black;">{{params['slogan']}}</p></h5>
+                                <a href="#process" class="btn btn-floating btn-large wow fadeIn" data-wow-delay="0.4s" data-offset="100"><i class="fas fa-angle-down" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--/Intro-->
+    <!--Main layout-->
+    <main><br>
+        <!-- Third container -->
+        <div class="container-fluid" id="process">
+            <!-- Section About -->
+            <section class="section feature-box my-5 pb-5">
+                <!-- Section title -->
+                <h2 class="text-center text-uppercase my-5 pt-5 wow fadeIn" data-wow-delay="0.2s">Process of <strong>creating</strong></h2>
+                <p class="text-center w-responsive mx-auto wow fadeIn my-5" data-wow-delay="0.2s"> Basically i create my project in three ways.</p>
+
+                    <!-- Nav tabs -->
+                    <ul class="nav md-tabs nav-justified blue" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#panel1" role="tab">01. Research</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#panel2" role="tab">02. Design</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#panel3" role="tab">03. Development</a>
+                        </li>
+                    </ul>
+                    <!-- Tab panels -->
+                    <div class="tab-content card">
+                        <!--Panel 1-->
+                        <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
+                            <br>
+                            <div class="row mt-2">
+                                <div class="col-2 text-center"> <i class="fas fa-search fa-3x mb-1 grey-text" aria-hidden="true"></i> </div>
+                                <div class="col-9 mb-2">
+                                    <p class="dark-grey-text">{{params['research']}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/.Panel 1-->
+
+                        <!--Panel 2-->
+                        <div class="tab-pane fade" id="panel2" role="tabpanel">
+                            <br>
+                            <div class="row mt-2">
+                                <div class="col-2 text-center"> <i class="fas fa-pencil-alt fa-3x mb-1 grey-text" aria-hidden="true"></i> </div>
+                                <div class="col-9 mb-2">
+                                    <p class="dark-grey-text">{{params['design']}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/.Panel 2-->
+
+                        <!--Panel 3-->
+                        <div class="tab-pane fade" id="panel3" role="tabpanel">
+                            <br>
+                            <div class="row mt-2">
+                                <div class="col-2 text-center"> <i class="fas fa-code fa-3x mb-1 grey-text" aria-hidden="true"></i> </div>
+                                <div class="col-9 mb-2">
+                                    <p class="dark-grey-text">{{params['development']}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/.Panel 3-->
+                    </div>
+                <!-- /.Tab panels -->
+            </section>
+            <!-- /.Section -->
+
+        </div>
+        <!-- /.Third container -->
+
+        <!-- Streak -->
+        <div class="streak streak-photo streak-md" style="background-image:url('https://mdbootstrap.com/img/Photos/Horizontal/Work/12-col/img%20%2811%29.jpg')">
+            <div class="mask flex-center rgba-indigo-strong">
+                <div class="white-text smooth-scroll mx-4">
+                    <h2 class="h2-responsive wow fadeIn mb-5"><i class="fas fa-quote-left" aria-hidden="true"></i>{{params['quote']}} <i class="fas fa-quote-right" aria-hidden="true"></i></h2>
+                    <h5 class="text-center font-italic wow fadeIn" data-wow-delay="0.2s">{{params['quote_author']}}</h5>
+                </div>
+            </div>
+        </div>
+        <!-- /.Streak -->
+
+<!--Section: Contact v.2-->
+<section class="container">
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold text-center my-4">Give Feedback</h2>
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto mb-5">Do you have any Feedback? 
+        <!--Grid column-->
+            <form id="feedback-form" method="POST" action="/feedback" enctype="multipart/form-data">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="name" name="name" class="form-control">
+                            <label for="name" class="">Your name</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="email" name="email" class="form-control">
+                            <label for="email" class="">Your email</label>
+                        </div>
+                    </div>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-md-12">
+                        <div class="md-form">
+                            <textarea type="text" id="msg" name="msg" rows="2" class="form-control md-textarea"></textarea>
+                            <label for="msg">Your Feedback</label>
+                        </div>
+                    </div>
+                </div>
+                      <div class="md-form mb-0">
+                            <input type="file" id="filename" name="img">
+                      </div>
+                   <div class="text-center text-md-left mt-4"> <button type="submit" class="btn btn-primary">Submit</button> </div>
+                <!--Grid row-->
+            </form>
+        <!--Grid column-->
+
+</section>
+<!--Section: Contact v.2-->
+
+            <!-- Section: Testimonials v.1 -->
+            <section class="text-center my-5 p-1 container">
+              <!-- Section heading -->
+              <h2 class="h1-responsive font-weight-bold my-5">Client Say about me</h2>
+              <!-- Section description -->
+              <p class="dark-grey-text w-responsive mx-auto mb-5">Feedback about my work </p>
+            
+              <!-- Grid row -->
+              <div class="row">
+             {% for feedback in feedbacks %}
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+                  <!--Card-->
+                  <div class="card testimonial-card">
+                    <!--Background color-->
+                    <div class="card-up info-color"></div>
+                    <!--Avatar-->
+                    <div class="avatar mx-auto white">
+                       <img src="{{url_for('static',filename='images/'+ feedback.img)}}" class="rounded-circle img-fluid">
+                    </div>
+                    <div class="card-body">
+                      <!--Name-->
+                      <h4 class="font-weight-bold mb-4">{{feedback.name}}</h4>
+                      <hr>
+                      <!--Quotation-->
+                      <p class="dark-grey-text mt-4"><i class="fas fa-quote-left pr-2"></i>{{feedback.feedback}}</p>
+                    </div>
+                  </div>
+                  <!--Card-->
+                </div>
+                {% endfor%}
+              </div>
+              <!-- Grid row -->
+                  <div class="clearfix">
+        <a class="btn btn-primary float-left" href="{{prevf}}">Previous</a>
+        <a class="btn btn-primary float-right" href="{{nextf}}">Next</a>
+      </div>
+            </section>
+  <!-- Section: Testimonials v.1 -->
+
+        <!-- /.Customers carousel -->
+         <section class="text-center my-5 p-1 container">
+    <div id="post">
+      <h2 class="text-center text-uppercase my-5 pt-5 wow fadeIn" data-wow-delay="0.2s">Blogs of <strong>{{params['title']}}</strong></h2>
+      {% for post in posts %}
+      <div class="container-fluid black-text">
+       <a href="/post/{{post.slug}}">
+          <div class="card text-center">
+            <div class="card-body">
+               <h4 class="card-title">{{post.title}}</h4>
+               <p class="card-text"> {{post.tagline}}</p>
+               <p class="card-text"> {{post.content[0:143]}}...</p>
+               <p class="mb-0">Posted By Admin in {{post.date}}</p>
+            </div>
+           </div>
+        </div></a><br>
+      {% endfor %}
+      </div>
+    </div>
+          <div class="clearfix">
+        <a class="btn btn-primary float-left" href="{{prevp}}">Previous</a>
+        <a class="btn btn-primary float-right" href="{{nextp}}">Next</a>
+      </div>
+    </section>
+    </main>
+    <!--/Main layout-->
+
+    {% endblock %}

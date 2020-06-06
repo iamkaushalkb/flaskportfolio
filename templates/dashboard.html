@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block body %}
+        <!-- Intro Section -->
+        <div id="home" class="view jarallax" data-jarallax='{"speed": 0.2}' style="background-image: url('{{ url_for('static', filename='img/pic5.jpg') }}'); background-repeat: no-repeat; background-size: cover; background-position: center top ;">
+            <div class="mask rgba-white-strong">
+                <div class="container h-100 d-flex justify-content-center align-items-center">
+                    <div class="row smooth-scroll">
+                        <div class="col-md-12 pt-3">
+                            <div class="white-text text-center pt-5">
+                                <h4 class="display-2 mb-4 dark-grey-text wow fadeIn">{{params['title']}}</h4>
+                                <h5 class="text-uppercase font-weight-bold wow fadeIn" data-wow-delay="0.4s"><p style="color: black;">{{params['slogan']}}</p></h5>
+                                <a href="#post" class="btn btn-floating btn-large wow fadeIn" data-wow-delay="0.4s" data-offset="100"><i class="fas fa-angle-down" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--/Intro-->
+    <br>
+<div class="container-fluid" id="post">    
+<h2>Manage Posts</h2>
+<a href="/edit/0"><buttom type="submit" class="btn btn-primary">Add Post</button></a>
+<div  style="overflow-x: auto; width: 100%;">
+<table class="table">
+  <thead class="black white-text">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Tag Line</th>
+      <th scope="col">Slug</th>
+      <th scope="col" style="width: 100px;">Content</th>
+      <th scope="col">Date</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for post in posts %}
+    <tr>
+      <th scope="row">{{post.id}}</th>
+      <td>{{post.title}}</td>
+      <td>{{post.tagline}}</td>
+      <td>{{post.slug}}</td>
+      <td style="width: 100%;">{{post.content}}</td>
+      <td>{{post.date}}</td>
+      <td><a href="/edit/{{post.id}}"><buttom class="btn btn-primary">Edit</button></a></td>
+      <td><a href="/delete/{{post.id}}"><buttom class="btn btn-primary">Delete</button></a></td>
+    </tr>
+ {% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row">
+ <div class="col-md-6">
+   <h3>Done with your work?</h3>  
+    <form action="/logout">
+    <button class="btn btn-primary">Logout</button>
+    </form
+ </div>
+ </div>
+</div>
+</div>
+{% endblock %}

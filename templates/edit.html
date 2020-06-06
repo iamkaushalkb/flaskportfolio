@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block body %}
+        <!-- Contact form -->
+        <div id="contact" class="container">
+            <!--Section: Contact v.2-->
+            <section class="section contact-section mt-4 mb-5">
+                <!--Section heading-->
+                <h2 class="text-center text-uppercase my-5 pt-5 wow fadeIn" data-wow-delay="0.2s">Add or Edit Post <strong>me</strong></h2>
+                <!--Section sescription-->
+                <div class="fadeIn" data-wow-delay="0.4s">
+                    <!--First column-->
+                        <form action="/edit/{{id}}" method="POST">
+                                    <div class="md-form mb-0">
+                                        <div class="md-form mb-0">
+                                            <input type="text" id="form41" class="form-control" name="title" value="{{post.title}}">
+                                            <label for="form41" class="">Title</label>
+                                        </div>
+                                    </div>
+                                    <div class="md-form mb-0">
+                                        <div class="md-form mb-0">
+                                            <input type="text" id="form52" class="form-control" name="tagline" value="{{post.tagline}}">
+                                            <label for="form52" class="">Tagline</label>
+                                        </div>
+                                    </div>
+                                    <div class="md-form mb-0">
+                                        <input type="text" id="form51" class="form-control" name="slug" value="{{post.slug}}">
+                                        <label for="form51" class="">Slug</label>
+                                    </div>
+                                    <div class="md-form mb-0">
+                                        <input type="text" id="form51" class="form-control" name="content" value="{{post.content}}">
+                                        <label for="form51" class="">Content</label>
+                                    </div>
+                                  <div class="text-center text-md-left mt-4"> <button type="submit" class="btn btn-primary">Submit</button> </div>
+                        </form>
+                       
+                    </div>
+
+                </div>
+            </section>
+            <!--/Section: Contact v.2-->
+        </div>
+        <!-- Contact form -->
+   {% endblock %}
